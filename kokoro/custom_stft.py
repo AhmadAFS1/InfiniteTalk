@@ -61,8 +61,8 @@ class CustomSTFT(nn.Module):
         forward_imag = dft_imag * forward_window
 
         # Convert to PyTorch
-        forward_real_torch = torch.from_numpy(forward_real).float()
-        forward_imag_torch = torch.from_numpy(forward_imag).float()
+        forward_real_torch = torch.tensor(forward_real.tolist(), dtype=torch.float32)
+        forward_imag_torch = torch.tensor(forward_imag.tolist(), dtype=torch.float32)
 
         # Register as Conv1d weight => (out_channels, in_channels, kernel_size)
         # out_channels = freq_bins, in_channels=1, kernel_size=n_fft
@@ -92,10 +92,10 @@ class CustomSTFT(nn.Module):
 
         # We'll implement iSTFT as real+imag conv_transpose with stride=hop.
         self.register_buffer(
-            "weight_backward_real", torch.from_numpy(backward_real).float().unsqueeze(1)
+            "weight_backward_real", torch.tensor(backward_real.tolist(), dtype=torch.float32).unsqueeze(1)
         )
         self.register_buffer(
-            "weight_backward_imag", torch.from_numpy(backward_imag).float().unsqueeze(1)
+            "weight_backward_imag", torch.tensor(backward_imag.tolist(), dtype=torch.float32).unsqueeze(1)
         )
         
 

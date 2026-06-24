@@ -109,7 +109,7 @@ class FlowUniPCMultistepScheduler(SchedulerMixin, ConfigMixin):
         alphas = np.linspace(1, 1 / num_train_timesteps,
                              num_train_timesteps)[::-1].copy()
         sigmas = 1.0 - alphas
-        sigmas = torch.from_numpy(sigmas).to(dtype=torch.float32)
+        sigmas = torch.tensor(sigmas.tolist(), dtype=torch.float32)
 
         if not use_dynamic_shifting:
             # when use_dynamic_shifting is True, we apply the timestep shifting on the fly based on the image resolution
@@ -208,9 +208,8 @@ class FlowUniPCMultistepScheduler(SchedulerMixin, ConfigMixin):
         sigmas = np.concatenate([sigmas, [sigma_last]
                                 ]).astype(np.float32)  # pyright: ignore
 
-        self.sigmas = torch.from_numpy(sigmas)
-        self.timesteps = torch.from_numpy(timesteps).to(
-            device=device, dtype=torch.int64)
+        self.sigmas = torch.tensor(sigmas.tolist(), dtype=torch.float32)
+        self.timesteps = torch.tensor(timesteps.tolist(), device=device, dtype=torch.int64)
 
         self.num_inference_steps = len(timesteps)
 

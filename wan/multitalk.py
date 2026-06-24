@@ -85,7 +85,9 @@ def resize_and_centercrop(cond_image, target_size):
             resized_image = cond_image.resize((final_w, final_h), resample=Image.BILINEAR)
             resized_image = np.array(resized_image)
             # tensor and crop
-            resized_tensor = torch.from_numpy(resized_image)[None, ...].permute(0, 3, 1, 2).contiguous()
+            resized_tensor = torch.tensor(
+                resized_image.tolist(), dtype=torch.uint8
+            )[None, ...].permute(0, 3, 1, 2).contiguous()
             cropped_tensor = transforms.functional.center_crop(resized_tensor, target_size)
             cropped_tensor = cropped_tensor[:, :, None, :, :] 
 

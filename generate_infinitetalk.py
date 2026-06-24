@@ -328,7 +328,9 @@ def get_embedding(speech_array, wav2vec_feature_extractor, audio_encoder, sr=160
     audio_feature = np.squeeze(
         wav2vec_feature_extractor(speech_array, sampling_rate=sr).input_values
     )
-    audio_feature = torch.from_numpy(audio_feature).float().to(device=device)
+    # Some Torch/Numpy builds reject valid numpy.ndarray objects via from_numpy.
+    # Copy through a Python list here; this path is small compared with model inference.
+    audio_feature = torch.tensor(audio_feature.tolist(), dtype=torch.float32, device=device)
     audio_feature = audio_feature.unsqueeze(0)
 
     # audio encoder

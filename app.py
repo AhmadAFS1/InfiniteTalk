@@ -306,7 +306,9 @@ def get_embedding(speech_array, wav2vec_feature_extractor, audio_encoder, sr=160
     audio_feature = np.squeeze(
         wav2vec_feature_extractor(speech_array, sampling_rate=sr).input_values
     )
-    audio_feature = torch.from_numpy(audio_feature).float().to(device=device)
+    # Some Torch/Numpy builds reject valid numpy.ndarray objects via from_numpy.
+    # Copy through a Python list here; this path is small compared with model inference.
+    audio_feature = torch.tensor(audio_feature.tolist(), dtype=torch.float32, device=device)
     audio_feature = audio_feature.unsqueeze(0)
 
     # audio encoder
@@ -808,7 +810,12 @@ def run_graio_demo(args):
             inputs=[img2vid_image, vid2vid_vid, task_mode, img2vid_prompt, n_prompt, img2vid_audio_1, img2vid_audio_2,sd_steps, seed, text_guide_scale, audio_guide_scale, mode_selector, tts_text, resolution_select, human1_voice, human2_voice],
             outputs=[result_gallery],
         )
-    demo.launch(server_name="0.0.0.0", debug=True, server_port=8418)
+    demo.launch(
+        server_name=os.environ.get("GRADIO_SERVER_NAME", "0.0.0.0"),
+        debug=True,
+        server_port=int(os.environ.get("GRADIO_SERVER_PORT", "8418")),
+        share=os.environ.get("GRADIO_SHARE", "0").lower() in {"1", "true", "yes"},
+    )
 
         
 

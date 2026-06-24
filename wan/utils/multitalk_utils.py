@@ -456,7 +456,9 @@ def match_and_blend_colors(source_chunk: torch.Tensor, reference_image: torch.Te
 
     # Permute back to (C, T, H, W), add batch dim, and convert to original torch.Tensor type and device
     # (T, H, W, C) -> (C, T, H, W)
-    corrected_chunk_tensor = torch.from_numpy(corrected_chunk_np_minus1_1).permute(3, 0, 1, 2).unsqueeze(0)
+    corrected_chunk_tensor = torch.tensor(
+        corrected_chunk_np_minus1_1.tolist(), dtype=torch.float32
+    ).permute(3, 0, 1, 2).unsqueeze(0)
     corrected_chunk_tensor = corrected_chunk_tensor.contiguous() # Ensure contiguous memory layout
     output_tensor = corrected_chunk_tensor.to(device=device, dtype=dtype)
     # print(f"[match_and_blend_colors] Output tensor shape: {output_tensor.shape}")
