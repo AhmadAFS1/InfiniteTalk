@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-REPO_URL="${REPO_URL:-https://github.com/MeiGen-AI/InfiniteTalk.git}"
+REPO_URL="${REPO_URL:-https://github.com/AhmadAFS1/InfiniteTalk.git}"
 REPO_DIR="${REPO_DIR:-$PWD}"
 ENV_NAME="${ENV_NAME:-infinitetalk}"
 PYTHON_VERSION="${PYTHON_VERSION:-3.10}"
