@@ -1,0 +1,14 @@
+weights/
+save_audio/
+
+__pycache__/
+*.pyc
+
+# Keep benchmark outputs small enough for git by default:
+# generated videos and benchmark reports are trackable, while staged inputs,
+# temporary audio, and verbose logs stay local unless force-added.
+benchmarks/**
+!benchmarks/
+!benchmarks/**/
+!benchmarks/**/*.mp4
+!benchmarks/**/benchmark.md
