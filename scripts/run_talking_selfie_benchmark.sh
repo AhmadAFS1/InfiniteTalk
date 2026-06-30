@@ -27,8 +27,8 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-REPO_DIR="/workspace/InfiniteTalk"
-ENV_NAME="infinitetalk"
+REPO_DIR="${INFINITETALK_REPO_DIR:-/workspace/InfiniteTalk}"
+ENV_NAME="${INFINITETALK_ENV_NAME:-infinitetalk}"
 RUN_ID="$(date -u '+%Y%m%dT%H%M%SZ')"
 RUN_DIR="$REPO_DIR/benchmarks/talking_selfie_$RUN_ID"
 REPORT_PATH="$RUN_DIR/benchmark.md"
