@@ -135,3 +135,19 @@ print(frame_num)
 + python - /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/input.json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/06_06_blonde_woman_beach_boardwalk.png /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
 + set +e
 + conda run -n infinitetalk python generate_infinitetalk.py --ckpt_dir weights/Wan2.1-I2V-14B-480P --wav2vec_dir weights/chinese-wav2vec2-base --infinitetalk_dir weights/InfiniteTalk/single/infinitetalk.safetensors --input_json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/input.json --size infinitetalk-480 --frame_num 81 --max_frame_num 233 --mode streaming --sample_steps 8 --num_persistent_param_in_dit 0 --offload_model True --save_file /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/video
++ status=0
++ set -e
++ echo '| `06_06_blonde_woman_beach_boardwalk.png` | `0` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/video.mp4` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/generation.log` |'
++ for image_path in "${IMAGES[@]}"
+++ basename /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/07_07_irish_redhead_bookstore.png
++ name=07_07_irish_redhead_bookstore.png
++ stem=07_07_irish_redhead_bookstore
++ item_dir=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore
++ input_json=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore/input.json
++ output_base=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore/video
++ log_path=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore/generation.log
++ [[ -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore/video.mp4 ]]
++ python - /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore/input.json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/07_07_irish_redhead_bookstore.png /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
++ set +e
++ conda run -n infinitetalk python generate_infinitetalk.py --ckpt_dir weights/Wan2.1-I2V-14B-480P --wav2vec_dir weights/chinese-wav2vec2-base --infinitetalk_dir weights/InfiniteTalk/single/infinitetalk.safetensors --input_json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore/input.json --size infinitetalk-480 --frame_num 81 --max_frame_num 233 --mode streaming --sample_steps 8 --num_persistent_param_in_dit 0 --offload_model True --save_file /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/07_07_irish_redhead_bookstore/video
