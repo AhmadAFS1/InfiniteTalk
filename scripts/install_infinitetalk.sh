@@ -8,6 +8,7 @@ PYTHON_VERSION="${PYTHON_VERSION:-3.10}"
 DOWNLOAD_MODELS="${DOWNLOAD_MODELS:-1}"
 DOWNLOAD_MULTI="${DOWNLOAD_MULTI:-0}"
 VALIDATE_ONLY="${VALIDATE_ONLY:-0}"
+VALIDATE_WEIGHTS="${VALIDATE_WEIGHTS:-1}"
 HF_HOME="${HF_HOME:-}"
 CUDA_HOME="${CUDA_HOME:-/usr/local/cuda}"
 MAX_JOBS="${MAX_JOBS:-$(nproc)}"
@@ -21,6 +22,7 @@ Options:
   --repo-dir PATH       Install/update InfiniteTalk at PATH. Default: current directory.
   --env-name NAME       Conda env name. Default: infinitetalk.
   --skip-models         Install code/dependencies only; do not download weights.
+  --skip-weight-check   Validate code/dependencies only; do not require model weights.
   --with-multi          Also download multi-person InfiniteTalk checkpoint.
   --validate-only       Run validation checks against an existing install.
   --repo-url URL        Git repository URL. Default: official InfiniteTalk repo.
@@ -48,6 +50,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --skip-models)
       DOWNLOAD_MODELS=0
+      shift
+      ;;
+    --skip-weight-check)
+      VALIDATE_WEIGHTS=0
       shift
       ;;
     --with-multi)
@@ -154,11 +160,20 @@ download_hf() {
 
 validate_install() {
   log "Validating install"
+  if ! conda env list | awk 'NF && $1 !~ /^#/ {print $1}' | grep -qx "$ENV_NAME"; then
+    echo "Missing conda environment: $ENV_NAME" >&2
+    exit 1
+  fi
+
   conda_run python -c '
 import importlib
 import scipy
+import sys
 import torch
 from importlib.metadata import version
+
+if sys.version_info[:2] != (3, 10):
+    raise SystemExit(f"Expected Python 3.10, found {sys.version.split()[0]}")
 
 modules = [
     "torch", "torchvision", "torchaudio", "xformers", "flash_attn", "misaki",
@@ -184,8 +199,9 @@ if failed:
 
   conda_run python generate_infinitetalk.py --help >/dev/null
   conda_run python app.py --help >/dev/null
+  conda_run ffmpeg -version >/dev/null
 
-  if [[ -d weights ]]; then
+  if [[ "$VALIDATE_WEIGHTS" == "1" ]]; then
     log "Validating required single-person model files"
     required_files=(
       weights/Wan2.1-I2V-14B-480P/config.json
@@ -210,6 +226,22 @@ clean_download_caches() {
   rm -rf "$REPO_DIR/weights/.hf-cache"
   find "$REPO_DIR/weights" -type d -path '*/.cache/huggingface' -prune -exec rm -rf {} + 2>/dev/null || true
   find "$REPO_DIR/weights" -type f -name '*.incomplete' -delete 2>/dev/null || true
+}
+
+prune_optional_weight_files() {
+  rm -f \
+    "$REPO_DIR/weights/chinese-wav2vec2-base/chinese-wav2vec2-base-fairseq-ckpt.pt" \
+    "$REPO_DIR/weights/chinese-wav2vec2-base/pytorch_model.bin"
+}
+
+clean_python_package() {
+  local package="$1"
+  local site_packages
+  site_packages="$(conda run -n "$ENV_NAME" python -c 'import site; print(site.getsitepackages()[0])')"
+  rm -rf \
+    "$site_packages/$package" \
+    "$site_packages/$package.libs" \
+    "$site_packages"/"$package"-*.dist-info
 }
 
 install_system_packages git curl bzip2
@@ -259,7 +291,7 @@ if [[ "$DOWNLOAD_MODELS" == "1" ]]; then
 fi
 
 log "Creating conda environment: $ENV_NAME"
-if ! conda env list | awk '{print $1}' | grep -qx "$ENV_NAME"; then
+if ! conda env list | awk 'NF && $1 !~ /^#/ {print $1}' | grep -qx "$ENV_NAME"; then
   conda create -y -n "$ENV_NAME" "python=$PYTHON_VERSION"
 fi
 
@@ -276,6 +308,7 @@ log "Installing InfiniteTalk Python dependencies"
 conda_run python -m pip install -r requirements.txt
 
 log "Applying compatibility pins validated with Torch 2.4.1/CUDA 12.1"
+clean_python_package numpy
 conda_run python -m pip install --force-reinstall \
   'numpy>=1.23.5,<2' \
   'scipy==1.11.4' \
@@ -284,6 +317,7 @@ conda_run python -m pip install --force-reinstall \
   'tokenizers>=0.20.3,<0.22' \
   'diffusers==0.33.0' \
   'gradio==5.50.0'
+conda_run python -m pip install --force-reinstall --no-deps 'accelerate==1.1.1'
 conda_run python -m pip install --force-reinstall --no-deps 'xfuser==0.4.1'
 conda_run python -m pip install soundfile einops hf_transfer
 
@@ -292,7 +326,9 @@ conda_run python -m pip install flash_attn==2.7.4.post1 --no-build-isolation
 
 log "Installing ffmpeg and librosa"
 conda install -y -n "$ENV_NAME" -c conda-forge ffmpeg librosa
+clean_python_package numpy
 conda_run python -m pip install --force-reinstall 'numpy>=1.23.5,<2' 'scipy==1.11.4'
+conda_run python -m pip install --force-reinstall --no-deps 'accelerate==1.1.1'
 find "$(conda run -n "$ENV_NAME" python -c 'import site; print(site.getsitepackages()[0])')" \
   -maxdepth 1 -type d -name 'scipy-*.dist-info' ! -name 'scipy-1.11.4.dist-info' -exec rm -rf {} + 2>/dev/null || true
 
@@ -303,6 +339,7 @@ if [[ "$DOWNLOAD_MODELS" == "1" ]]; then
   clean_download_caches
   download_hf TencentGameMate/chinese-wav2vec2-base weights/chinese-wav2vec2-base
   download_hf TencentGameMate/chinese-wav2vec2-base weights/chinese-wav2vec2-base model.safetensors --revision refs/pr/1
+  prune_optional_weight_files
   clean_download_caches
   download_hf MeiGen-AI/InfiniteTalk weights/InfiniteTalk single/infinitetalk.safetensors
   if [[ "$DOWNLOAD_MULTI" == "1" ]]; then

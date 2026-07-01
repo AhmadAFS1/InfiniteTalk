@@ -1,0 +1,165 @@
+
+  0%|          | 0/8 [00:00<?, ?it/s]
+ 12%|█▎        | 1/8 [01:02<07:15, 62.16s/it]
+ 25%|██▌       | 2/8 [02:02<06:07, 61.30s/it]
+ 38%|███▊      | 3/8 [03:03<05:04, 60.94s/it]
+ 50%|█████     | 4/8 [04:04<04:03, 60.88s/it]
+ 62%|██████▎   | 5/8 [05:05<03:02, 60.92s/it]
+ 75%|███████▌  | 6/8 [06:06<02:01, 60.92s/it]
+ 88%|████████▊ | 7/8 [07:06<01:00, 60.78s/it]
+100%|██████████| 8/8 [08:07<00:00, 60.69s/it]
+100%|██████████| 8/8 [08:07<00:00, 60.88s/it]
+
+  0%|          | 0/8 [00:00<?, ?it/s]
+ 12%|█▎        | 1/8 [01:00<07:03, 60.55s/it]
+ 25%|██▌       | 2/8 [02:01<06:03, 60.58s/it]
+ 38%|███▊      | 3/8 [03:01<05:03, 60.68s/it]
+ 50%|█████     | 4/8 [04:02<04:02, 60.65s/it]
+ 62%|██████▎   | 5/8 [05:03<03:01, 60.63s/it]
+ 75%|███████▌  | 6/8 [06:03<02:01, 60.66s/it]
+ 88%|████████▊ | 7/8 [07:04<01:00, 60.60s/it]
+100%|██████████| 8/8 [08:04<00:00, 60.57s/it]
+100%|██████████| 8/8 [08:04<00:00, 60.61s/it]
+
+  0%|          | 0/8 [00:00<?, ?it/s]
+ 12%|█▎        | 1/8 [01:00<07:04, 60.58s/it]
+ 25%|██▌       | 2/8 [02:01<06:05, 60.83s/it]
+ 38%|███▊      | 3/8 [03:02<05:04, 60.86s/it]
+ 50%|█████     | 4/8 [04:03<04:03, 60.92s/it]
+ 62%|██████▎   | 5/8 [05:04<03:02, 60.84s/it]
+ 75%|███████▌  | 6/8 [06:04<02:01, 60.79s/it]
+ 88%|████████▊ | 7/8 [07:05<01:00, 60.73s/it]
+100%|██████████| 8/8 [08:06<00:00, 60.69s/it]
+100%|██████████| 8/8 [08:06<00:00, 60.76s/it]
+
+  0%|          | 0/8 [00:00<?, ?it/s]
+ 12%|█▎        | 1/8 [01:00<07:05, 60.76s/it]
+ 25%|██▌       | 2/8 [02:01<06:04, 60.67s/it]
+ 38%|███▊      | 3/8 [03:02<05:03, 60.73s/it]
+ 50%|█████     | 4/8 [04:02<04:02, 60.72s/it]
+ 62%|██████▎   | 5/8 [05:03<03:02, 60.67s/it]
+ 75%|███████▌  | 6/8 [06:04<02:01, 60.65s/it]
+ 88%|████████▊ | 7/8 [07:04<01:00, 60.70s/it]
+100%|██████████| 8/8 [08:05<00:00, 60.67s/it]
+100%|██████████| 8/8 [08:05<00:00, 60.68s/it]
+
+Saving video:   0%|          | 0/229 [00:00<?, ?it/s]
+Saving video:   0%|          | 1/229 [00:01<03:53,  1.03s/it]
+Saving video:  10%|█         | 24/229 [00:01<00:07, 28.96it/s]
+Saving video:  25%|██▌       | 58/229 [00:01<00:02, 75.09it/s]
+Saving video:  41%|████      | 93/229 [00:01<00:01, 123.00it/s]
+Saving video:  53%|█████▎    | 122/229 [00:01<00:00, 156.21it/s]
+Saving video:  66%|██████▌   | 151/229 [00:01<00:00, 185.32it/s]
+Saving video:  81%|████████  | 185/229 [00:01<00:00, 222.34it/s]
+Saving video:  96%|█████████▌| 220/229 [00:01<00:00, 253.36it/s]
+Saving video: 100%|██████████| 229/229 [00:01<00:00, 130.36it/s]
+ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 14.3.0 (conda-forge gcc 14.3.0-19)
+  configuration: --prefix=/opt/conda/envs/infinitetalk --cc=/home/conda/feedstock_root/build_artifacts/ffmpeg_1782259620328/_build_env/bin/x86_64-conda-linux-gnu-cc --cxx=/home/conda/feedstock_root/build_artifacts/ffmpeg_1782259620328/_build_env/bin/x86_64-conda-linux-gnu-c++ --nm=x86_64-conda-linux-gnu-nm --ar=x86_64-conda-linux-gnu-ar --disable-doc --enable-openssl --enable-demuxer=dash --enable-hardcoded-tables --enable-libfreetype --enable-libharfbuzz --enable-libfontconfig --enable-libopenh264 --enable-libdav1d --disable-gnutls --enable-libvpx --enable-libass --enable-libplacebo --enable-pthreads --enable-alsa --enable-libpulse --enable-libvpl --enable-vaapi --enable-libopenvino --enable-gpl --enable-libx264 --enable-libx265 --enable-libmp3lame --enable-libaom --enable-libsvtav1 --enable-libxml2 --enable-pic --enable-shared --disable-static --enable-version3 --enable-zlib --enable-libvorbis --enable-libopus --enable-librsvg --enable-libjxl --enable-libwebp --enable-ffplay --enable-vulkan --enable-libshaderc --pkg-config=/home/conda/feedstock_root/build_artifacts/ffmpeg_1782259620328/_build_env/bin/pkg-config
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+[aist#0:0/pcm_s16le @ 0x5c825e1ea640] Guessed Channel Layout: mono
+Input #0, wav, from 'save_audio/02_02_hispanic_woman_cozy_cafe/sum_all.wav':
+  Duration: 00:00:09.18, bitrate: 256 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 16000 Hz, mono, s16, 256 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to '/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video-cropaudio.wav':
+  Metadata:
+    ISFT            : Lavf62.12.102
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 16000 Hz, mono, s16, 256 kb/s
+    Metadata:
+      encoder         : Lavc62.28.102 pcm_s16le
+[out#0/wav @ 0x5c825e1f3580] video:0KiB audio:286KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.026610%
+size=     286KiB time=00:00:09.16 bitrate= 256.1kbits/s speed=2e+03x elapsed=0:00:00.00    
+ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 14.3.0 (conda-forge gcc 14.3.0-19)
+  configuration: --prefix=/opt/conda/envs/infinitetalk --cc=/home/conda/feedstock_root/build_artifacts/ffmpeg_1782259620328/_build_env/bin/x86_64-conda-linux-gnu-cc --cxx=/home/conda/feedstock_root/build_artifacts/ffmpeg_1782259620328/_build_env/bin/x86_64-conda-linux-gnu-c++ --nm=x86_64-conda-linux-gnu-nm --ar=x86_64-conda-linux-gnu-ar --disable-doc --enable-openssl --enable-demuxer=dash --enable-hardcoded-tables --enable-libfreetype --enable-libharfbuzz --enable-libfontconfig --enable-libopenh264 --enable-libdav1d --disable-gnutls --enable-libvpx --enable-libass --enable-libplacebo --enable-pthreads --enable-alsa --enable-libpulse --enable-libvpl --enable-vaapi --enable-libopenvino --enable-gpl --enable-libx264 --enable-libx265 --enable-libmp3lame --enable-libaom --enable-libsvtav1 --enable-libxml2 --enable-pic --enable-shared --disable-static --enable-version3 --enable-zlib --enable-libvorbis --enable-libopus --enable-librsvg --enable-libjxl --enable-libwebp --enable-ffplay --enable-vulkan --enable-libshaderc --pkg-config=/home/conda/feedstock_root/build_artifacts/ffmpeg_1782259620328/_build_env/bin/pkg-config
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video-temp.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.1.100
+  Duration: 00:00:09.16, start: 0.000000, bitrate: 528 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 448x832, 525 kb/s, 25 fps, 25 tbr, 12800 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc61.3.100 libx264
+[aist#1:0/pcm_s16le @ 0x562d78eece00] Guessed Channel Layout: mono
+Input #1, wav, from '/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video-cropaudio.wav':
+  Metadata:
+    encoder         : Lavf62.12.102
+  Duration: 00:00:09.16, bitrate: 256 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 16000 Hz, mono, s16, 256 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0x562d78f4a7c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x562d78f4a7c0] profile High, level 3.0, 4:2:0, 8-bit
+[libx264 @ 0x562d78f4a7c0] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=26 lookahead_threads=4 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf62.12.102
+  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 448x832, q=2-31, 25 fps, 12800 tbn (default)
+    Metadata:
+      encoder         : Lavc62.28.102 libx264
+      handler_name    : VideoHandler
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 16000 Hz, mono, fltp, 69 kb/s
+    Metadata:
+      encoder         : Lavc62.28.102 aac
+frame=  125 fps=0.0 q=28.0 size=     256KiB time=00:00:04.92 bitrate= 426.3kbits/s speed=9.84x elapsed=0:00:00.50    
+[out#0/mp4 @ 0x562d78eea340] video:626KiB audio:82KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.001506%
+frame=  229 fps=0.0 q=-1.0 Lsize=     715KiB time=00:00:09.08 bitrate= 645.4kbits/s speed=12.6x elapsed=0:00:00.72    
+[libx264 @ 0x562d78f4a7c0] frame I:1     Avg QP:21.72  size: 33945
+[libx264 @ 0x562d78f4a7c0] frame P:62    Avg QP:22.11  size:  7197
+[libx264 @ 0x562d78f4a7c0] frame B:166   Avg QP:27.28  size:   965
+[libx264 @ 0x562d78f4a7c0] consecutive B-frames:  0.4%  7.9%  2.6% 89.1%
+[libx264 @ 0x562d78f4a7c0] mb I  I16..4:  4.7% 73.7% 21.6%
+[libx264 @ 0x562d78f4a7c0] mb P  I16..4:  0.1%  1.8%  0.3%  P16..4: 43.4% 19.8% 10.7%  0.0%  0.0%    skip:24.1%
+[libx264 @ 0x562d78f4a7c0] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8: 39.8%  1.9%  0.2%  direct: 0.2%  skip:57.8%  L0:42.8% L1:54.9% BI: 2.3%
+[libx264 @ 0x562d78f4a7c0] 8x8 transform intra:79.8% inter:77.5%
+[libx264 @ 0x562d78f4a7c0] coded y,uvDC,uvAC intra: 84.0% 71.7% 35.2% inter: 9.8% 7.0% 0.4%
+[libx264 @ 0x562d78f4a7c0] i16 v,h,dc,p: 20% 10%  4% 66%
+[libx264 @ 0x562d78f4a7c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 11%  9%  8%  8% 13%  7% 15%  8%
+[libx264 @ 0x562d78f4a7c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 17%  8%  8% 10% 10% 10%  8%  6%
+[libx264 @ 0x562d78f4a7c0] i8c dc,h,v,p: 44% 18% 27% 11%
+[libx264 @ 0x562d78f4a7c0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x562d78f4a7c0] ref P L0: 60.0% 19.0% 15.4%  5.5%
+[libx264 @ 0x562d78f4a7c0] ref B L0: 92.4%  6.3%  1.2%
+[libx264 @ 0x562d78f4a7c0] ref B L1: 98.1%  1.9%
+[libx264 @ 0x562d78f4a7c0] kb/s:559.34
+[aac @ 0x562d79166140] Qavg: 33996.176
+
+[2026-06-30 21:46:07,645] INFO: Generation job args: Namespace(task='infinitetalk-14B', size='infinitetalk-480', frame_num=81, max_frame_num=233, ckpt_dir='weights/Wan2.1-I2V-14B-480P', infinitetalk_dir='weights/InfiniteTalk/single/infinitetalk.safetensors', quant_dir=None, wav2vec_dir='weights/chinese-wav2vec2-base', dit_path=None, lora_dir=None, lora_scale=[1.2], offload_model=True, ulysses_size=1, ring_size=1, t5_fsdp=False, t5_cpu=False, dit_fsdp=False, save_file='/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video', audio_save_dir='save_audio', base_seed=42, input_json='/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/input.json', motion_frame=9, mode='streaming', sample_steps=8, sample_shift=7, sample_text_guide_scale=5.0, sample_audio_guide_scale=4.0, num_persistent_param_in_dit=0, audio_mode='localfile', use_teacache=False, teacache_thresh=0.2, use_apg=False, apg_momentum=-0.75, apg_norm_threshold=55, color_correction_strength=1.0, scene_seg=False, quant=None)
+[2026-06-30 21:46:07,645] INFO: Generation model config: {'__name__': 'Config: Wan MultiTalk AI2V 14B', 't5_model': 'umt5_xxl', 't5_dtype': torch.bfloat16, 'text_len': 512, 'param_dtype': torch.bfloat16, 'num_train_timesteps': 1000, 'sample_fps': 16, 'sample_neg_prompt': 'bright tones, overexposed, static, blurred details, subtitles, style, works, paintings, images, static, overall gray, worst quality, low quality, JPEG compression residue, ugly, incomplete, extra fingers, poorly drawn hands, poorly drawn faces, deformed, disfigured, misshapen limbs, fused fingers, still picture, messy background, three legs, many people in the background, walking backwards', 't5_checkpoint': 'models_t5_umt5-xxl-enc-bf16.pth', 't5_tokenizer': 'google/umt5-xxl', 'clip_model': 'clip_xlm_roberta_vit_h_14', 'clip_dtype': torch.float16, 'clip_checkpoint': 'models_clip_open-clip-xlm-roberta-large-vit-huge-14.pth', 'clip_tokenizer': 'xlm-roberta-large', 'vae_checkpoint': 'Wan2.1_VAE.pth', 'vae_stride': (4, 8, 8), 'patch_size': (1, 2, 2), 'dim': 5120, 'ffn_dim': 13824, 'freq_dim': 256, 'num_heads': 40, 'num_layers': 40, 'window_size': (-1, -1), 'qk_norm': True, 'cross_attn_norm': True, 'eps': 1e-06}
+[2026-06-30 21:46:07,645] INFO: Creating infinitetalk pipeline.
+[2026-06-30 21:46:07,645] INFO: loading weights/Wan2.1-I2V-14B-480P/models_t5_umt5-xxl-enc-bf16.pth
+[2026-06-30 21:47:19,307] INFO: loading weights/Wan2.1-I2V-14B-480P/Wan2.1_VAE.pth
+[2026-06-30 21:47:19,665] INFO: loading weights/Wan2.1-I2V-14B-480P/models_clip_open-clip-xlm-roberta-large-vit-huge-14.pth
+[2026-06-30 21:47:27,625] INFO: Creating WanModel from weights/Wan2.1-I2V-14B-480P
+[2026-06-30 21:49:57,692] INFO: Generating video ...
+('/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/02_02_hispanic_woman_cozy_cafe.png', '/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav')
+No conversion needed.
+[2026-06-30 22:25:40,854] INFO: Saving generated video to /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video.mp4
+[2026-06-30 22:25:40,855] INFO: Finished.
+

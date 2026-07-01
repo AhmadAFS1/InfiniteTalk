@@ -1,0 +1,137 @@
++ set -Eeuo pipefail
++ ZIP_PATH=assets/varied_background_selfie_images.zip
++ REPO_DIR=/workspace/InfiniteTalk
++ ENV_NAME=infinitetalk
++ TEXT='Hello, and welcome to LumaTalk! An AI companion platform where you can interact with AI companions for practicing foreign langauges!'
+++ date -u +%Y%m%dT%H%M%SZ
++ RUN_ID=20260630T223259Z
++ RUN_DIR=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z
++ IMAGE_DIR=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images
++ AUDIO_PATH=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
++ SUMMARY_PATH=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/summary.md
++ GEN_FRAME_NUM=81
++ SAMPLE_STEPS=8
++ [[ ! -f assets/varied_background_selfie_images.zip ]]
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images
++ python - assets/varied_background_selfie_images.zip /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/01_01_arab_woman_city_balcony.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/02_02_hispanic_woman_cozy_cafe.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/03_03_japanese_woman_modern_apartment.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/04_04_filipina_woman_tropical_resort.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/05_05_brazilian_woman_colorful_living_room.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/06_06_blonde_woman_beach_boardwalk.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/07_07_irish_redhead_bookstore.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/08_08_south_korean_man_modern_workspace.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/09_09_white_man_riverside_promenade.png
+/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/10_10_brazilian_man_rooftop_city_view.png
++ mapfile -t IMAGES
+++ find /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images -maxdepth 1 -type f
+++ sort
++ [[ 10 -eq 0 ]]
+++ date +%s
++ tts_start=1782858779
++ [[ ! -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav ]]
+++ date +%s
++ tts_end=1782858779
++ [[ ! -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav ]]
+++ conda run -n infinitetalk python -c '
+import math
+import sys
+import soundfile as sf
+
+info = sf.info(sys.argv[1])
+target = math.ceil((info.frames / info.samplerate) * 25)
+frame_num = target if (target - 1) % 4 == 0 else target + (4 - ((target - 1) % 4))
+print(frame_num)
+' /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
++ FRAME_NUM=233
++ MAX_FRAME_NUM=233
++ MODE=clip
++ ((  FRAME_NUM > GEN_FRAME_NUM  ))
++ MODE=streaming
++ [[ ! -f /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/summary.md ]]
++ for image_path in "${IMAGES[@]}"
+++ basename /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/01_01_arab_woman_city_balcony.png
++ name=01_01_arab_woman_city_balcony.png
++ stem=01_01_arab_woman_city_balcony
++ item_dir=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/01_01_arab_woman_city_balcony
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/01_01_arab_woman_city_balcony
++ input_json=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/01_01_arab_woman_city_balcony/input.json
++ output_base=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/01_01_arab_woman_city_balcony/video
++ log_path=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/01_01_arab_woman_city_balcony/generation.log
++ [[ -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/01_01_arab_woman_city_balcony/video.mp4 ]]
++ grep -Fq '| `01_01_arab_woman_city_balcony.png` | `0` |' /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/summary.md
++ continue
++ for image_path in "${IMAGES[@]}"
+++ basename /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/02_02_hispanic_woman_cozy_cafe.png
++ name=02_02_hispanic_woman_cozy_cafe.png
++ stem=02_02_hispanic_woman_cozy_cafe
++ item_dir=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe
++ input_json=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/input.json
++ output_base=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video
++ log_path=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/generation.log
++ [[ -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/02_02_hispanic_woman_cozy_cafe/video.mp4 ]]
++ grep -Fq '| `02_02_hispanic_woman_cozy_cafe.png` | `0` |' /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/summary.md
++ continue
++ for image_path in "${IMAGES[@]}"
+++ basename /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/03_03_japanese_woman_modern_apartment.png
++ name=03_03_japanese_woman_modern_apartment.png
++ stem=03_03_japanese_woman_modern_apartment
++ item_dir=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment
++ input_json=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/input.json
++ output_base=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/video
++ log_path=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/generation.log
++ [[ -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/video.mp4 ]]
++ python - /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/input.json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/03_03_japanese_woman_modern_apartment.png /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
++ set +e
++ conda run -n infinitetalk python generate_infinitetalk.py --ckpt_dir weights/Wan2.1-I2V-14B-480P --wav2vec_dir weights/chinese-wav2vec2-base --infinitetalk_dir weights/InfiniteTalk/single/infinitetalk.safetensors --input_json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/input.json --size infinitetalk-480 --frame_num 81 --max_frame_num 233 --mode streaming --sample_steps 8 --num_persistent_param_in_dit 0 --offload_model True --save_file /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/video
++ status=0
++ set -e
++ echo '| `03_03_japanese_woman_modern_apartment.png` | `0` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/video.mp4` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/03_03_japanese_woman_modern_apartment/generation.log` |'
++ for image_path in "${IMAGES[@]}"
+++ basename /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/04_04_filipina_woman_tropical_resort.png
++ name=04_04_filipina_woman_tropical_resort.png
++ stem=04_04_filipina_woman_tropical_resort
++ item_dir=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort
++ input_json=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/input.json
++ output_base=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/video
++ log_path=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/generation.log
++ [[ -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/video.mp4 ]]
++ python - /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/input.json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/04_04_filipina_woman_tropical_resort.png /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
++ set +e
++ conda run -n infinitetalk python generate_infinitetalk.py --ckpt_dir weights/Wan2.1-I2V-14B-480P --wav2vec_dir weights/chinese-wav2vec2-base --infinitetalk_dir weights/InfiniteTalk/single/infinitetalk.safetensors --input_json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/input.json --size infinitetalk-480 --frame_num 81 --max_frame_num 233 --mode streaming --sample_steps 8 --num_persistent_param_in_dit 0 --offload_model True --save_file /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/video
++ status=0
++ set -e
++ echo '| `04_04_filipina_woman_tropical_resort.png` | `0` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/video.mp4` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/04_04_filipina_woman_tropical_resort/generation.log` |'
++ for image_path in "${IMAGES[@]}"
+++ basename /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/05_05_brazilian_woman_colorful_living_room.png
++ name=05_05_brazilian_woman_colorful_living_room.png
++ stem=05_05_brazilian_woman_colorful_living_room
++ item_dir=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room
++ input_json=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/input.json
++ output_base=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/video
++ log_path=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/generation.log
++ [[ -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/video.mp4 ]]
++ python - /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/input.json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/05_05_brazilian_woman_colorful_living_room.png /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
++ set +e
++ conda run -n infinitetalk python generate_infinitetalk.py --ckpt_dir weights/Wan2.1-I2V-14B-480P --wav2vec_dir weights/chinese-wav2vec2-base --infinitetalk_dir weights/InfiniteTalk/single/infinitetalk.safetensors --input_json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/input.json --size infinitetalk-480 --frame_num 81 --max_frame_num 233 --mode streaming --sample_steps 8 --num_persistent_param_in_dit 0 --offload_model True --save_file /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/video
++ status=0
++ set -e
++ echo '| `05_05_brazilian_woman_colorful_living_room.png` | `0` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/video.mp4` | `/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/05_05_brazilian_woman_colorful_living_room/generation.log` |'
++ for image_path in "${IMAGES[@]}"
+++ basename /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/06_06_blonde_woman_beach_boardwalk.png
++ name=06_06_blonde_woman_beach_boardwalk.png
++ stem=06_06_blonde_woman_beach_boardwalk
++ item_dir=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk
++ mkdir -p /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk
++ input_json=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/input.json
++ output_base=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/video
++ log_path=/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/generation.log
++ [[ -s /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/video.mp4 ]]
++ python - /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/input.json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/06_06_blonde_woman_beach_boardwalk.png /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav
++ set +e
++ conda run -n infinitetalk python generate_infinitetalk.py --ckpt_dir weights/Wan2.1-I2V-14B-480P --wav2vec_dir weights/chinese-wav2vec2-base --infinitetalk_dir weights/InfiniteTalk/single/infinitetalk.safetensors --input_json /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/input.json --size infinitetalk-480 --frame_num 81 --max_frame_num 233 --mode streaming --sample_steps 8 --num_persistent_param_in_dit 0 --offload_model True --save_file /workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/06_06_blonde_woman_beach_boardwalk/video

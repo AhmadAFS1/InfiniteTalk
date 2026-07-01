@@ -1,0 +1,7 @@
+{
+  "prompt": "A natural close-up talking selfie video. The person looks into the camera, speaks warmly, and keeps a realistic expression and posture.",
+  "cond_video": "/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/images/04_04_filipina_woman_tropical_resort.png",
+  "cond_audio": {
+    "person1": "/workspace/InfiniteTalk/outputs/lumatalk_zip_batch_20260630T210603Z/lumatalk_tts.wav"
+  }
+}

@@ -640,7 +640,7 @@ class InfiniteTalkPipeline:
                 # prepare timesteps
                 timesteps = list(np.linspace(self.num_timesteps, 1, sampling_steps, dtype=np.float32))
                 timesteps.append(0.)
-                timesteps = [torch.tensor([t], device=self.device) for t in timesteps]
+                timesteps = [torch.tensor([float(t)], device=self.device) for t in timesteps]
                 if self.use_timestep_transform:
                     timesteps = [timestep_transform(t, shift=shift, num_timesteps=self.num_timesteps) for t in timesteps]
                 
