@@ -138,12 +138,8 @@ import sys
 json_path, image_path, audio_path = sys.argv[1:4]
 payload = {
     "prompt": (
-        "A realistic handheld talking selfie video. The person holds the phone camera "
-        "at arm's length, looks into the lens, smiles warmly, and speaks naturally. "
-        "The camera has subtle handheld movement with gentle sway and small walking "
-        "or shifting motion, so the background moves slightly with natural parallax "
-        "instead of staying perfectly still. Keep the face stable, close-up, and "
-        "well-framed, with realistic lighting and no dramatic camera shake."
+        "A natural close-up talking selfie video. The person looks into the camera, "
+        "speaks warmly, and keeps a realistic expression and posture."
     ),
     "cond_video": image_path,
     "cond_audio": {"person1": audio_path},
