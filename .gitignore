@@ -4,9 +4,6 @@ save_audio/
 __pycache__/
 *.pyc
 
-# Local model/download caches can contain GitHub-sized blobs.
-**/hf-cache/
-
 # Keep benchmark outputs small enough for git by default:
 # generated videos and benchmark reports are trackable, while staged inputs,
 # temporary audio, and verbose logs stay local unless force-added.
